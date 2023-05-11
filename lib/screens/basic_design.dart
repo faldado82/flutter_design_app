@@ -113,7 +113,6 @@ class DescriptionSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black12,
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
       child: const Text(
         'LoremDeserunt aliqua velit incididunt officia eiusmod anim adipisicing id tempor consequat aliquip id. Ipsum duis reprehenderit deserunt culpa. Sit deserunt aliquip amet duis sit officia incididunt sunt exercitation aliqua aliqua commodo deserunt. Ut aliqua exercitation commodo enim. Nostrud mollit voluptate amet nulla proident laboris duis laboris ad duis culpa. Lorem Deserunt aliqua velit incididunt officia eiusmod anim adipisicing id tempor consequat aliquip id. Ipsum duis reprehenderit deserunt culpa. Sit deserunt aliquip amet duis sit officia incididunt sunt exercitation aliqua aliqua commodo deserunt. Ut aliqua exercitation commodo enim. Nostrud mollit voluptate amet nulla proident laboris duis laboris ad duis culpa.',
