@@ -15,13 +15,15 @@ class BasicDesignScreen extends StatelessWidget {
 
         // Botones
         ButtonSection(),
+
+        // Descripcion
+        DescriptionSection()
       ]),
     );
   }
 }
 
-
-// Widget Titulo 
+// Widget Titulo
 class Title extends StatelessWidget {
   const Title({
     super.key,
@@ -30,7 +32,7 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
       child: Row(
         children: [
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
@@ -48,7 +50,6 @@ class Title extends StatelessWidget {
   }
 }
 
-
 // Widget Botones
 class ButtonSection extends StatelessWidget {
   const ButtonSection({
@@ -58,56 +59,65 @@ class ButtonSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Column(
-            children: const [
-              Icon(
-                Icons.phone,
-                color: Colors.blue,
-              ),
-              Text(
-                'CALL',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
-          Column(
-            children: const [
-              Icon(
-                Icons.room_outlined,
-                color: Colors.blue,
-              ),
-              Text(
-                'ROUTE',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
-          Column(
-            children: const [
-              Icon(
-                Icons.share,
-                color: Colors.blue,
-              ),
-              Text(
-                'SHARE',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
+        children: const [
+          CustomButton(icon: Icons.phone, text: 'CALL'),
+          CustomButton(icon: Icons.room, text: 'ROUTE'),
+          CustomButton(icon: Icons.share, text: 'SHARE'),
         ],
+      ),
+    );
+  }
+}
+
+// Widget CustomButton
+class CustomButton extends StatelessWidget {
+  final IconData icon;
+  final String text;
+
+  const CustomButton({
+    super.key,
+    required this.icon,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Icon(
+          icon,
+          color: Colors.blue,
+        ),
+        const SizedBox(height: 5),
+        Text(
+          text,
+          style: const TextStyle(
+            color: Colors.blue,
+            fontSize: 12,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// Widget Description Section
+class DescriptionSection extends StatelessWidget {
+  const DescriptionSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.black12,
+      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+      child: const Text(
+        'LoremDeserunt aliqua velit incididunt officia eiusmod anim adipisicing id tempor consequat aliquip id. Ipsum duis reprehenderit deserunt culpa. Sit deserunt aliquip amet duis sit officia incididunt sunt exercitation aliqua aliqua commodo deserunt. Ut aliqua exercitation commodo enim. Nostrud mollit voluptate amet nulla proident laboris duis laboris ad duis culpa. Lorem Deserunt aliqua velit incididunt officia eiusmod anim adipisicing id tempor consequat aliquip id. Ipsum duis reprehenderit deserunt culpa. Sit deserunt aliquip amet duis sit officia incididunt sunt exercitation aliqua aliqua commodo deserunt. Ut aliqua exercitation commodo enim. Nostrud mollit voluptate amet nulla proident laboris duis laboris ad duis culpa.',
+        textAlign: TextAlign.justify,
       ),
     );
   }
